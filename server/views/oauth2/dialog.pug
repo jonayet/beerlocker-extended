@@ -1,0 +1,13 @@
+block content
+    h1 Beer Locker Extended
+
+    p Hi #{user.username}!
+    p #[b= client.name] is requesting #[b full access] to your account.
+    p Do you approve?
+
+    form(action="/api/v1/oauth2/authorize", method="post")
+        input(name="transaction_id", type="hidden", value=transactionID)
+        div #[input(type="submit", value="Allow", id="allow")] #[input(type="submit", value="Deny", id="deny")]
+            
+
+    
